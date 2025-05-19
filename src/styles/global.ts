@@ -15,11 +15,6 @@ const globalCss = defineGlobalStyles({
 
   button: {
     cursor: "pointer",
-    // "&:active": {
-    //   transform: "translateY(1px)",
-    //   textShadow: "-1px -1px 0px #777, -1px -1px 0px #777",
-    //   boxShadow: "inset 1px 1px 4px #222",
-    // },
   },
 
   "html, body, #__next": {
@@ -29,6 +24,7 @@ const globalCss = defineGlobalStyles({
   body: {
     fontFamily:
       "dmSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+    backgroundColor: "token(colors.mainBg)",
   },
 });
 
