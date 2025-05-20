@@ -1,12 +1,22 @@
 export const item = [
   {
-    img: "https://www.outerspace.com.br/wp-content/uploads/2018/04/reddeadredemption2.jpg",
-    title: "Red Dead Redemption 2",
-    price: "R$ 215,00",
+    id: 1,
+    titulo: "Bíblia Slim Filament Marrom - NVT",
+    autor: "Mundo Cristão",
+    imagem:
+      "https://images.tcdn.com.br/img/img_prod/400550/pre_venda_biblia_slim_filament_preta_nvt_2061_2_af82f09586aacb524dfa755e81ce3ec3.jpg",
+    preco: 165,
+    descricao:
+      "A Bíblia Filament é a versão mais inovadora que já foi publicada em língua portuguesa. Ela une a simplicidade e clareza da Nova Versão Transformadora (NVT) com uma experiência digital imersiva que vai surpreender você! Além do texto impresso, a Bíblia oferece acesso gratuito ao aplicativo Filament, que é fácil de utilizar e expande sua leitura com recursos incríveis, diretamente no seu celular ou tablet.",
   },
   {
-    img: "https://cdn1.epicgames.com/catnip/offer/BL3Wide_2560x1440-2560x1440-462318f36bee20de4412e111ef72dc62.jpg",
-    title: "Borderlands 3",
-    price: "R$ 215,00",
+    id: 2,
+    titulo: "Bíblia Slim Filament Preta - NVT",
+    autor: "Mundo Cristão",
+    imagem:
+      "https://images.tcdn.com.br/img/img_prod/400550/biblia_365_naa_edicao_limitada_2071_1_13e6ec29c90c9550d5de5d647f6f3c43.jpg",
+    preco: 165,
+    descricao:
+      "A Bíblia Filament é a versão mais inovadora que já foi publicada em língua portuguesa. Ela une a simplicidade e clareza da Nova Versão Transformadora (NVT) com uma experiência digital imersiva que vai surpreender você! Além do texto impresso, a Bíblia oferece acesso gratuito ao aplicativo Filament, que é fácil de utilizar e expande sua leitura com recursos incríveis, diretamente no seu celular ou tablet.",
   },
 ];

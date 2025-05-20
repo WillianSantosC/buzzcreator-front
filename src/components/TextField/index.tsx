@@ -1,13 +1,10 @@
 "use client";
 
-import { InputHTMLAttributes, useState } from "react";
-
+import { InputHTMLAttributes } from "react";
 import * as S from "./styles";
 
 export type TextFieldProps = {
-  onInput?: (value: string) => void;
   label?: string;
-  initialValue?: string;
   icon?: string;
   iconPosition?: "left" | "right";
   disabled?: boolean;
@@ -19,22 +16,13 @@ const TextField = ({
   iconPosition = "left",
   label,
   name,
-  initialValue = "",
   error,
   disabled = false,
+  value,
+  onChange,
   onInput,
   ...props
 }: TextFieldProps) => {
-  const [value, setValue] = useState(initialValue);
-
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.currentTarget.value;
-    setValue(newValue);
-    if (onInput) {
-      onInput(newValue);
-    }
-  };
-
   return (
     <S.Wrapper className="TextFieldWrapper" disabled={disabled} error={!!error}>
       {!!label && (
@@ -49,12 +37,13 @@ const TextField = ({
         <S.Input
           className="Input"
           type="text"
-          onChange={onChange}
-          value={value}
           iconPosition={iconPosition}
           disabled={disabled}
           name={name}
-          {...(label ? { id: name } : {})}
+          id={name}
+          value={value}
+          onChange={onChange}
+          onInput={onInput}
           {...props}
         />
       </S.InputWrapper>
