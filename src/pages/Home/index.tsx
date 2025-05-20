@@ -73,7 +73,7 @@ const Home = ({ books = [] }: BooksTemplateProps) => {
         <S.Main>
           <section>
             <Grid>
-              {visibleBooks.map((item, idx) => (
+              {visibleBooks?.map((item, idx) => (
                 <BookCard
                   onClick={() => showBookPopup(idx)}
                   key={item.id}

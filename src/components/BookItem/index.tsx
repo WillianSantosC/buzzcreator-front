@@ -4,12 +4,13 @@ export type BookItemProps = {
   id: number;
   imagem: string;
   titulo: string;
+  estoque: number;
   preco: number;
 };
 
 const BookItem = ({ imagem, titulo, preco }: BookItemProps) => (
   <S.Wrapper className="BookItemWrapper">
-    <S.GameContent>
+    <S.BookContent>
       <S.ImageBox>
         <img src={imagem} alt={titulo} width={100} height={100} />
       </S.ImageBox>
@@ -23,7 +24,7 @@ const BookItem = ({ imagem, titulo, preco }: BookItemProps) => (
           })}
         </S.Price>
       </S.Content>
-    </S.GameContent>
+    </S.BookContent>
   </S.Wrapper>
 );
 
