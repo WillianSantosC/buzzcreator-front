@@ -1,6 +1,7 @@
 import * as S from "./styles";
 
 export type BookCardProps = {
+  id: number;
   titulo: string;
   autor: string;
   imagem: string;
@@ -16,7 +17,7 @@ const BookCard = ({ titulo, autor, imagem, preco }: BookCardProps) => (
     <S.Content>
       <S.Info>
         <S.Title>{titulo}</S.Title>
-        <S.Developer>{autor}</S.Developer>
+        <S.Author>{autor}</S.Author>
       </S.Info>
       <S.BuyBox>
         <S.Price>

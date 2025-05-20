@@ -35,9 +35,6 @@ const Menu = () => {
 
       <S.MenuGroup>
         <S.IconWrapper>
-          <S.Icon src="/img/search.svg" aria-label="Search" />
-        </S.IconWrapper>
-        <S.IconWrapper>
           <S.Icon src="/img/shopping-bag.svg" aria-label="Shopping Bag" />
         </S.IconWrapper>
       </S.MenuGroup>

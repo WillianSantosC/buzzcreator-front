@@ -11,13 +11,13 @@ const Empty = ({ title, description, hasLink }: EmptyProps) => (
   <S.Wrapper className="EmptyWrapper">
     <S.Image
       className="EmptyImage"
-      src="/img/empty.svg"
-      alt="A gamer in a couch playing videogame"
+      src="/img/livro.png"
+      alt="Um livro"
       role="image"
     />
     <S.Title className="EmptyTitle">{title}</S.Title>
     <S.Description className="EmptyDescription">{description}</S.Description>
-    {hasLink && <LinkButton href="/">Go back to store</LinkButton>}
+    {hasLink && <LinkButton href="/">Volte para a loja</LinkButton>}
   </S.Wrapper>
 );
 export default Empty;

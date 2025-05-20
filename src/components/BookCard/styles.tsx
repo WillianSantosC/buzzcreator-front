@@ -55,25 +55,11 @@ export const Title = styled("h3", {
   },
 });
 
-export const Developer = styled("h4", {
+export const Author = styled("h4", {
   base: {
     fontSize: "token(font.sizes.small)",
     fontWeight: "token(font.bold)",
     color: "token(colors.gray)",
-  },
-});
-
-export const FavButton = styled("div", {
-  base: {
-    color: "token(colors.primary)",
-    position: "absolute",
-    right: "0",
-    top: "-0.5rem",
-    cursor: "pointer",
-
-    "& > svg": {
-      transform: "scale(1.8)",
-    },
   },
 });
 
@@ -92,21 +78,10 @@ export const Price = styled("div", {
     fontWeight: "token(font.bold)",
     height: "3rem",
     alignItems: "center",
-  },
-  variants: {
-    isPromotional: {
-      true: {
-        color: "token(colors.gray)",
-        textDecoration: "line-through",
-        marginRight: "token(spacings.xxsmall)",
-      },
-      false: {
-        color: "token(colors.white)",
-        padding: "0 token(spacings.xxsmall)",
-        backgroundColor: "token(colors.secondary)",
-        borderRadius: "token(border.radius)",
-        marginRight: "calc(token(spacings.xxsmall) / 2)",
-      },
-    },
+    color: "token(colors.white)",
+    padding: "0 token(spacings.xxsmall)",
+    backgroundColor: "token(colors.secondary)",
+    borderRadius: "token(border.radius)",
+    marginRight: "calc(token(spacings.xxsmall) / 2)",
   },
 });
