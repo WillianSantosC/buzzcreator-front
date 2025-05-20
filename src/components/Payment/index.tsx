@@ -15,10 +15,6 @@ const Payment = () => {
     return;
   }
 
-  function handleCancelPayment() {
-    return;
-  }
-
   return (
     <S.Wrapper>
       <S.Body>
@@ -38,9 +34,6 @@ const Payment = () => {
         </S.CardsList>
       </S.Body>
       <S.Footer>
-        <Button minimal onClick={() => handleCancelPayment}>
-          Cancelar compra
-        </Button>
         <Button fullWidth onClick={() => handlePayment} disabled={!name}>
           Finalizar compra
         </Button>

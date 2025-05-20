@@ -6,9 +6,10 @@ export type BookItemProps = {
   titulo: string;
   estoque: number;
   preco: number;
+  remove?: boolean;
 };
 
-const BookItem = ({ imagem, titulo, preco }: BookItemProps) => (
+const BookItem = ({ imagem, titulo, preco, remove = false }: BookItemProps) => (
   <S.Wrapper className="BookItemWrapper">
     <S.BookContent>
       <S.ImageBox>
@@ -17,12 +18,17 @@ const BookItem = ({ imagem, titulo, preco }: BookItemProps) => (
 
       <S.Content>
         <S.Title>{titulo}</S.Title>
-        <S.Price>
-          {preco.toLocaleString("pt-BR", {
-            style: "currency",
-            currency: "BRL",
-          })}
-        </S.Price>
+
+        <S.InfoWrapper>
+          <S.Price>
+            {preco.toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          </S.Price>
+
+          {remove && <S.Icon src="/img/trash-bl.svg" alt="Delete" />}
+        </S.InfoWrapper>
       </S.Content>
     </S.BookContent>
   </S.Wrapper>

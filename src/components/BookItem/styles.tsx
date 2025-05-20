@@ -8,6 +8,24 @@ export const Wrapper = styled("div", {
   },
 });
 
+export const InfoWrapper = styled("div", {
+  base: {
+    display: "flex",
+    alignItems: "center",
+    gap: { base: "1rem" },
+    width: "20%",
+    justifyContent: "space-between",
+  },
+});
+
+export const Icon = styled("img", {
+  base: {
+    width: "2rem",
+    height: "2rem",
+    cursor: "pointer",
+  },
+});
+
 export const BookContent = styled("div", {
   base: {
     display: "flex",
