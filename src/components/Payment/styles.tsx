@@ -3,7 +3,7 @@ import { styled } from "../../../styled-system/jsx";
 export const Wrapper = styled("main", {
   base: {
     background: "token(colors.white)",
-    height: "70%",
+    height: "20rem",
   },
 });
 

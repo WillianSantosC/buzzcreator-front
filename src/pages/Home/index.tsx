@@ -5,6 +5,7 @@ import Container from "@/components/Container";
 import { Grid } from "@/components/Grid";
 import Menu from "@/components/Menu";
 
+import BookModal from "@/components/BookModal";
 import Empty from "@/components/Empty";
 import { useMemo, useState } from "react";
 import * as S from "./styles";
@@ -16,6 +17,8 @@ export type BooksTemplateProps = {
 const Home = ({ books = [] }: BooksTemplateProps) => {
   const [search, setSearch] = useState("");
   const [visibleCount, setVisibleCount] = useState(4);
+  const [isOpen, setIsOpen] = useState(false);
+  const [idx, setIdx] = useState(0);
 
   const filteredBooks = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -44,6 +47,11 @@ const Home = ({ books = [] }: BooksTemplateProps) => {
     Math.min(visibleCount, filteredBooks.length),
   );
 
+  const showBookPopup = (i: number) => {
+    setIdx(i);
+    setIsOpen(true);
+  };
+
   return (
     <S.Wrapper>
       <Container>
@@ -65,8 +73,12 @@ const Home = ({ books = [] }: BooksTemplateProps) => {
         <S.Main>
           <section>
             <Grid>
-              {visibleBooks.map((item) => (
-                <BookCard key={item.id} {...item} />
+              {visibleBooks.map((item, idx) => (
+                <BookCard
+                  onClick={() => showBookPopup(idx)}
+                  key={item.id}
+                  {...item}
+                />
               ))}
             </Grid>
             {visibleCount < filteredBooks.length && (
@@ -86,6 +98,13 @@ const Home = ({ books = [] }: BooksTemplateProps) => {
           )}
         </S.Main>
       </S.Content>
+
+      <BookModal
+        books={books}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        index={idx}
+      />
     </S.Wrapper>
   );
 };

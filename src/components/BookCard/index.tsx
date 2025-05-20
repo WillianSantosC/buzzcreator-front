@@ -7,10 +7,11 @@ export type BookCardProps = {
   imagem: string;
   preco: number;
   descricao: string;
+  onClick?: () => void;
 };
 
-const BookCard = ({ titulo, autor, imagem, preco }: BookCardProps) => (
-  <S.Wrapper>
+const BookCard = ({ titulo, autor, imagem, preco, onClick }: BookCardProps) => (
+  <S.Wrapper onClick={onClick}>
     <S.ImageBox>
       <img src={imagem} alt={titulo} />
     </S.ImageBox>
