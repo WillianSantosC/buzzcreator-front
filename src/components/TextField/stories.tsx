@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { MdOutlineEmail } from "react-icons/md";
 
 import TextField, { TextFieldProps } from ".";
 
@@ -12,7 +11,7 @@ export default {
   args: {
     label: "E-mail",
     name: "Email",
-    icon: <MdOutlineEmail />,
+    icon: "/img/mail.svg",
     id: "Email",
     initialValue: "",
     placeholder: "john.cage@gmail.com",
@@ -31,9 +30,9 @@ export const Default: StoryObj<TextFieldProps> = {
 };
 
 export const WithError: StoryObj<TextFieldProps> = {
-  args: { error: "Ops...something is wrong" },
+  args: { error: "Ops... Algo deu errado" },
   render: (args) => (
-    <div style={{ maxWidth: 300, padding: 15 }}>
+    <div style={{ maxWidth: 420, padding: 15 }}>
       <TextField {...args} />
     </div>
   ),

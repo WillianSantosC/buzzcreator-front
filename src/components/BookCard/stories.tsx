@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import GameCard, { GameCardProps } from ".";
+import BookCard, { BookCardProps } from ".";
 
 export default {
-  title: "components/GameCard",
-  component: GameCard,
+  title: "components/BookCard",
+  component: BookCard,
   parameters: {
     layout: "fullscreen",
     backgrounds: {
@@ -12,35 +12,18 @@ export default {
     },
   },
   args: {
-    title: "Population Zero",
-    developer: "Rockstar Games",
-    img: "https://shared.steamstatic.com/store_item_assets/steam/apps/1239430/header.jpg?t=1635865376",
-    price: "R$ 235,00",
-    promotionalPrice: "R$ 200,00",
-  },
-  argTypes: {
-    onFav: { action: "clicked" },
-    ribbon: { type: "string" },
+    titulo: "Box das Crianças",
+    autor: "JesusCopy",
+    imagem:
+      "https://images.tcdn.com.br/img/img_prod/400550/box_dia_das_criancas_2037_1_ef071c6ab942531f4bd19842274c3b97.jpg",
+    preco: 90,
   },
 } as Meta;
 
-export const Default: StoryObj<GameCardProps> = {
+export const Default: StoryObj<BookCardProps> = {
   render: (args) => (
-    <div style={{ width: "30rem" }}>
-      <GameCard {...args} />
-    </div>
-  ),
-};
-
-export const WithRibbon: StoryObj<GameCardProps> = {
-  args: {
-    ribbon: "20% OFF",
-    ribbonSize: "small",
-    ribbonColor: "primary",
-  },
-  render: (args) => (
-    <div style={{ width: "30rem" }}>
-      <GameCard {...args} />
+    <div style={{ width: "30rem", margin: " 0 auto" }}>
+      <BookCard {...args} />
     </div>
   ),
 };

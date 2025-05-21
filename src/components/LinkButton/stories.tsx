@@ -13,7 +13,7 @@ export default {
 export const Default: StoryObj = {};
 
 Default.args = {
-  children: "Buy Now",
+  children: "Compre Agora",
   size: "large",
   href: "/link",
 };

@@ -14,7 +14,3 @@ export default {
 } as Meta;
 
 export const Default: StoryObj = {};
-
-export const Logged: StoryObj = {
-  args: { username: "John Doe" },
-};

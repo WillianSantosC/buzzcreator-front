@@ -18,5 +18,5 @@ export default {
 export const Default: StoryObj = {};
 
 Default.args = {
-  children: "Most Populars",
+  children: "Meu carrinho",
 };

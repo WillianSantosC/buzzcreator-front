@@ -11,7 +11,9 @@ export default {
 } as Meta;
 
 export const Desktop: StoryObj = {
-  render: () => <MediaMatch greaterThan="medium">Only on Desktop</MediaMatch>,
+  render: () => (
+    <MediaMatch greaterThan="medium">Somente em Desktop</MediaMatch>
+  ),
 };
 
 Desktop.parameters = {
@@ -21,7 +23,7 @@ Desktop.parameters = {
 };
 
 export const Mobile: StoryObj = {
-  render: () => <MediaMatch lessThan="medium">Only on Mobile</MediaMatch>,
+  render: () => <MediaMatch lessThan="medium">Somente em Mobile</MediaMatch>,
 };
 
 Mobile.parameters = {

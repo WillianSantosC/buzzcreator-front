@@ -12,8 +12,8 @@ export default {
     },
   },
   args: {
-    title: "Your wishlist is empty",
-    description: "Games added to your wishlist will appear here",
+    title: "Seu carrinho está vazio",
+    description: "Volte para a loja e adicione alguns produtos.",
     hasLink: true,
   },
 } as Meta;

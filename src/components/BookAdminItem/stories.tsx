@@ -7,11 +7,17 @@ export default {
   component: BookAdminItem,
   parameters: {
     layout: "fullscreen",
+    backgrounds: {
+      default: "won-dark",
+    },
   },
   args: {
-    img: "https://www.outerspace.com.br/wp-content/uploads/2018/04/reddeadredemption2.jpg",
-    title: "Red Dead Redemption 2",
-    price: "R$ 215,00",
+    titulo: "Box das Crianças",
+    autor: "JesusCopy",
+    imagem:
+      "https://images.tcdn.com.br/img/img_prod/400550/box_dia_das_criancas_2037_1_ef071c6ab942531f4bd19842274c3b97.jpg",
+    preco: 90,
+    estoque: 20,
   },
 } as Meta;
 
