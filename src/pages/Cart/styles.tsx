@@ -2,8 +2,11 @@ import { styled } from "../../../styled-system/jsx";
 
 export const Container = styled("div", {
   base: {
-    display: "grid",
-    gridTemplateColumns: { base: "1fr", _mdMI: "2fr 1fr" },
+    display: { base: "flex", _lgMI: "grid" },
+    flexDirection: "column",
+    width: "100%",
+
+    gridTemplateColumns: { _lgMI: "2fr 1fr" },
     gridGap: "token(spacings.large)",
     margin: "token(spacings.large) 0",
   },

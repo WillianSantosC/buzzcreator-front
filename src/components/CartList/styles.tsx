@@ -6,6 +6,7 @@ export const Wrapper = styled("main", {
     display: "flex",
     flexDirection: "column",
     alignSelf: "start",
+    width: "100%",
   },
   variants: {
     isEmpty: {

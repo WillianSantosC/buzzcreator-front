@@ -61,6 +61,8 @@ export const Icon = styled("img", {
 export const BookContent = styled("div", {
   base: {
     display: "flex",
+    flexDirection: { base: "column", _mdMI: "row" },
+    alignItems: "center",
   },
 });
 
