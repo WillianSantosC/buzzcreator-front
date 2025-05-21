@@ -15,6 +15,9 @@ const config: Config = {
   collectCoverage: true,
   collectCoverageFrom: [
     "src/**/*.ts(x)?",
+    "!src/store/**",
+    "!src/middleware.ts",
+    "!src/pages/**",
     "!src/app/**", // should be tested in e2e
     "!src/lib/registry.tsx",
     "!src/types/**",

@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BookItem /> matches snapshot 1`] = `
+<div
+  class="p_token(spacings.small) bd-b_0.1rem_solid_token(colors.lightGray) mdMI:d_flex BookItemWrapper"
+>
+  <div
+    class="d_flex flex-d_column mdMI:flex-d_row ai_center"
+  >
+    <div
+      class="flex-sh_0 mr_1.2rem mdMI:mr_token(spacings.xsmall) w_9.6rem mdMI:w_15rem h_5.6rem mdMI:h_7rem [&_img]:w_100% [&_img]:h_100% [&_img]:obj-f_cover"
+    >
+      <img
+        alt="The Pragmatic Programmer"
+        height="100"
+        src="/img/books.jpg"
+        width="100"
+      />
+    </div>
+    <div
+      class="d_flex flex-d_column ai_flex-start"
+    >
+      <h3
+        class="fs_token(font.sizes.small) mdMI:fs_2rem lh_token(font.sizes.small) mdMI:lh_2rem fw_token(font.bold) c_token(colors.black) mb_token(spacings.xxsmall)"
+      >
+        The Pragmatic Programmer
+      </h3>
+      <div
+        class="d_flex ai_center gap_1rem w_20% jc_space-between"
+      >
+        <div
+          class="c_token(colors.white) p_0.2rem_token(spacings.xxsmall) bg-c_token(colors.secondary) bdr_token(border.radius) fs_token(font.sizes.small) fw_token(font.bold)"
+        >
+          R$ 120,00
+        </div>
+        <div
+          class="d_flex ai_center jc_space-between gap_1rem"
+        >
+          <div
+            class="d_flex ai_center jc_space-between gap_1rem bd_solid_0.1rem_token(colors.darkGray) bdr_token(border.radius) p_0.3rem [&_button]:bd_none [&_button]:ring_none [&_button]:p_0.3rem_0.8rem [&_button]:m_0 [&_button]:font_bold [&_button]:fs_token(font.sizes.xsmall) [&_button]:bg_token(colors.lightGray) [&_button]:bdr_token(border.radius)"
+          >
+            <button>
+              -
+            </button>
+            <span>
+              2
+            </span>
+            <button>
+              +
+            </button>
+          </div>
+          <img
+            alt="Delete"
+            class="w_2rem h_2rem cursor_pointer"
+            src="/img/trash-bl.svg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BookCard /> matches snapshot 1`] = `
+<article
+  class="pos_relative d_flex flex-d_column w_100% h_100% bg-c_token(colors.white) cursor_pointer"
+>
+  <div
+    class="h_20rem w_100% bg_#f6f7f8 bg-i_linear-gradient(_to_right,#f6f7f8_0%,#edeef1_20%,#f6f7f8_40%,#f6f7f8_100%) bg-s_80rem_14rem anim_placeholderShimmer_1s_linear_infinite_forwards [&_>_img]:w_100% [&_>_img]:h_100% [&_>_img]:obj-f_cover"
+  >
+    <img
+      alt="Clean Code"
+      src="/img/books.jpg"
+    />
+  </div>
+  <div
+    class="d_flex flex-d_column jc_space-between pos_relative h_100% m_token(spacings.xsmall)"
+  >
+    <div
+      class="max-w_calc(100%_-_2.5rem)"
+    >
+      <h3
+        class="fs_token(font.sizes.medium) lh_token(font.sizes.medium) fw_token(font.bold) c_token(colors.black)"
+      >
+        Clean Code
+      </h3>
+      <h4
+        class="fs_token(font.sizes.small) fw_token(font.bold) c_token(colors.gray)"
+      >
+        Robert C. Martin
+      </h4>
+    </div>
+    <div
+      class="d_flex ai_center jc_flex-end mt_token(spacings.xxsmall)"
+    >
+      <div
+        class="d_inline-flex fw_token(font.bold) h_3rem ai_center c_token(colors.white) p_0_token(spacings.xxsmall) bg-c_token(colors.secondary) bdr_token(border.radius) mr_calc(token(spacings.xxsmall)_/_2)"
+      >
+        R$ 99,90
+      </div>
+    </div>
+  </div>
+</article>
+`;
