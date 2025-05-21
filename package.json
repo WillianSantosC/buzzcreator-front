@@ -16,11 +16,15 @@
     "test:ci": "jest --runInBand"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.0.1",
     "jose": "^6.0.11",
     "next": "14.2.21",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-hot-toast": "^2.5.2"
+    "react-hook-form": "^7.56.4",
+    "react-hot-toast": "^2.5.2",
+    "swr": "^2.3.3",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.9.0",

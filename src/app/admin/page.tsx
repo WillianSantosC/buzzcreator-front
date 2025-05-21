@@ -1,17 +1,25 @@
 import { CartListProps } from "@/components/CartList";
 import Admin from "@/pages/Admin";
 
-import { item as itemsMock } from "@/components/CartList/mock";
+async function getCartPageData(): Promise<Pick<CartListProps, "items">> {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/book`, {
+      cache: "no-store",
+    });
 
-function getCartPageData() {
-  const output = {
-    items: itemsMock,
-  };
+    if (!res.ok) {
+      return { items: [] };
+    }
 
-  return output;
+    const items = await res.json();
+
+    return { items };
+  } catch {
+    return { items: [] };
+  }
 }
 
-export default function AdminPage() {
-  const props: Pick<CartListProps, "items"> = getCartPageData();
-  return <Admin {...props} />;
+export default async function AdminPage() {
+  const props = await getCartPageData();
+  return <Admin fallbackData={props.items} />;
 }
