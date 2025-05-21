@@ -45,7 +45,7 @@ const Admin = ({ fallbackData }: AdminProps) => {
     setId(id);
   };
 
-  const handleBookAdded = async () => {
+  const fetchBooks = async () => {
     await mutate();
   };
 
@@ -64,7 +64,7 @@ const Admin = ({ fallbackData }: AdminProps) => {
             <Heading lineLeft lineColor="secondary">
               Adicione um novo livro
             </Heading>
-            <FormCreate onSuccess={handleBookAdded} />
+            <FormCreate onSuccess={fetchBooks} />
           </Container>
           <Container>
             <Heading lineLeft lineColor="secondary">
@@ -74,6 +74,7 @@ const Admin = ({ fallbackData }: AdminProps) => {
               items.map((item) => (
                 <BookAdminItem
                   onclick={() => handleClick(item.id)}
+                  onSuccess={fetchBooks}
                   key={item.id}
                   {...item}
                 />
@@ -89,7 +90,12 @@ const Admin = ({ fallbackData }: AdminProps) => {
           </Container>
         </S.Container>
       </S.Content>
-      <EditModal bookId={id} isOpen={isOpen} setIsOpen={setIsOpen} />
+      <EditModal
+        onSuccess={fetchBooks}
+        bookId={id}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
     </S.Wrapper>
   );
 };
