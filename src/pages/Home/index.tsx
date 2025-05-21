@@ -99,12 +99,14 @@ const Home = ({ books = [] }: BooksTemplateProps) => {
         </S.Main>
       </S.Content>
 
-      <BookModal
-        books={books}
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        index={idx}
-      />
+      {visibleBooks.length && (
+        <BookModal
+          books={books}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          index={idx}
+        />
+      )}
     </S.Wrapper>
   );
 };
