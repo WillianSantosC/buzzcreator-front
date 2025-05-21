@@ -74,7 +74,8 @@ export const Content = styled("div", {
 
 export const ContentWrapper = styled("div", {
   base: {
-    width: { base: "30rem", _mdMI: "36rem" },
+    width: { base: "90%", _mdMI: "100%" },
+    margin: "0 auto",
 
     "& .HeadingWrapper": {
       marginBottom: "token(spacings.medium)",
