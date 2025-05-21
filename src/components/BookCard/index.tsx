@@ -7,6 +7,7 @@ export type BookCardProps = {
   imagem: string;
   preco: number;
   descricao: string;
+  estoque: number;
   onClick?: () => void;
 };
 

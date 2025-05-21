@@ -8,6 +8,38 @@ export const Wrapper = styled("div", {
   },
 });
 
+export const AlterWrapper = styled("div", {
+  base: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: { base: "1rem" },
+  },
+});
+
+export const Controls = styled("div", {
+  base: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: { base: "1rem" },
+    border: "solid 0.1rem token(colors.darkGray)",
+    borderRadius: "token(border.radius)",
+    padding: "0.3rem",
+
+    "& button": {
+      border: "none",
+      outline: "none",
+      padding: "0.3rem 0.8rem",
+      margin: "0",
+      font: "bold",
+      fontSize: "token(font.sizes.xsmall)",
+      background: "token(colors.lightGray)",
+      borderRadius: "token(border.radius)",
+    },
+  },
+});
+
 export const InfoWrapper = styled("div", {
   base: {
     display: "flex",

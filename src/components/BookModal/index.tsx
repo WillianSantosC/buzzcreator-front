@@ -1,3 +1,6 @@
+import { useCartStore } from "@/store/cart";
+import { useState } from "react";
+import toast from "react-hot-toast";
 import { BookCardProps } from "../BookCard";
 import BookItem from "../BookItem";
 import Button from "../Button";
@@ -14,6 +17,14 @@ export type BookModalProps = {
 
 const BookModal = ({ books, isOpen, setIsOpen, index }: BookModalProps) => {
   const book = books[index];
+  const [quantidade, setQuantidade] = useState(1);
+  const addItem = useCartStore((state) => state.addItem);
+
+  const handleAdd = () => {
+    addItem({ ...book, quantidade });
+    toast.success("Livro adicionado ao carrinho");
+    setIsOpen(false);
+  };
 
   return (
     <PopUp isOpen={isOpen} setIsOpen={setIsOpen}>
@@ -29,8 +40,12 @@ const BookModal = ({ books, isOpen, setIsOpen, index }: BookModalProps) => {
             type="number"
             min="1"
             placeholder="Quantidade"
+            value={quantidade}
+            onChange={(e) => setQuantidade(Number(e.target.value))}
           />
-          <Button size="small">Adicionar ao Carrinho</Button>
+          <Button disabled={!quantidade} size="small" onClick={handleAdd}>
+            Adicionar ao Carrinho
+          </Button>
         </S.AddToCart>
       </S.Wrapper>
     </PopUp>

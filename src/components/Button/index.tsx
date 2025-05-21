@@ -9,7 +9,7 @@ type ButtonProps = {
   fullWidth?: boolean;
   minimal?: boolean;
   icon?: JSX.Element;
-  onClick?: () => (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 } & ButtonTypes;
 
 const Button = ({

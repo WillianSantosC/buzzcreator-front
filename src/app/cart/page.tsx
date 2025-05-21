@@ -1,18 +1,20 @@
+"use client";
+
 import Cart, { CartProps } from "@/pages/Cart";
 
-import { item as itemsMock } from "@/components/CartList/mock";
-
-function getCartPageData() {
-  const output = {
-    items: itemsMock,
-    total: "$ 430,00",
-  };
-
-  return output;
-}
+import { useCartStore } from "@/store/cart";
 
 export default function CartPage() {
-  const props: CartProps = getCartPageData();
+  const items = useCartStore((state) => state.items);
+  const total = useCartStore((state) => state.total());
+
+  const props: CartProps = {
+    items,
+    total: total.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }),
+  };
 
   return <Cart {...props} />;
 }
