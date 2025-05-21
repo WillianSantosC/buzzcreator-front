@@ -1,6 +1,6 @@
 "use client";
 
-import Cart, { CartProps } from "@/pages/Cart";
+import Cart, { CartProps } from "@/templates/Cart";
 
 import { useCartStore } from "@/store/cart";
 

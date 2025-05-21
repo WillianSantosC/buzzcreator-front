@@ -1,5 +1,5 @@
 import FormSignIn from "@/components/FormSignIn";
-import Auth from "@/pages/Auth";
+import Auth from "@/templates/Auth";
 
 export default function Login() {
   return (

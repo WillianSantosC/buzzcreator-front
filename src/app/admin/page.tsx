@@ -1,5 +1,5 @@
 import { CartListProps } from "@/components/CartList";
-import Admin from "@/pages/Admin";
+import Admin from "@/templates/Admin";
 
 async function getCartPageData(): Promise<Pick<CartListProps, "items">> {
   try {

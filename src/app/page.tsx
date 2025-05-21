@@ -1,4 +1,4 @@
-import Home, { BooksTemplateProps } from "@/pages/Home";
+import Home, { BooksTemplateProps } from "@/templates/Home";
 
 async function getHomePageData(): Promise<BooksTemplateProps> {
   try {
