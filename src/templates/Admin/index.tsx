@@ -1,5 +1,6 @@
 "use client";
 
+import { useAuthGuard } from "@/app/hooks/useAuthGuard";
 import BookAdminItem from "@/components/BookAdminItem";
 import { CartListProps } from "@/components/CartList";
 import Container from "@/components/Container";
@@ -24,6 +25,9 @@ type AdminProps = {
 };
 
 const Admin = ({ fallbackData }: AdminProps) => {
+  // Verifica se o usuário está autenticado
+  useAuthGuard();
+
   const {
     data: items = [],
     error,

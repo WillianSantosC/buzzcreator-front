@@ -68,6 +68,7 @@ const EditModal = ({
 
   const onSubmit = async (data: EditFormData) => {
     const toastId = toast.loading("Atualizando livro...");
+    const token = localStorage.getItem("session");
 
     const filteredData = Object.fromEntries(
       Object.entries(data).filter(
@@ -79,6 +80,8 @@ const EditModal = ({
       ),
     );
 
+    console.log(token);
+
     try {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/book/${bookId}`,
@@ -86,8 +89,8 @@ const EditModal = ({
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
           },
-          credentials: "include",
           body: JSON.stringify(filteredData),
         },
       );

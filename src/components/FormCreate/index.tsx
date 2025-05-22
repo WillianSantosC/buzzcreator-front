@@ -55,13 +55,15 @@ const FormCreate = ({ onSuccess }: FormCreateProps) => {
 
   const onSubmit = async (data: FormData) => {
     const toastId = toast.loading("Enviando...");
+    const token = localStorage.getItem("session");
+
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/book`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
-        credentials: "include",
         body: JSON.stringify(data),
       });
 

@@ -36,7 +36,6 @@ const FormSignIn = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          credentials: "include",
           body: JSON.stringify({
             username: formData.username,
             password: formData.password,
@@ -49,6 +48,9 @@ const FormSignIn = () => {
         toast.error(error || "Erro ao fazer login");
         return;
       }
+
+      const { token } = await res.json();
+      localStorage.setItem("session", token);
 
       router.push("/admin");
       toast.success("Login realizado com sucesso!");

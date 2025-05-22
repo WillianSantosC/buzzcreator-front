@@ -22,11 +22,14 @@ const BookAdminItem = ({
 }: BookAdminItemProps) => {
   const handleDelete = async (id: number) => {
     const toastId = toast.loading("Removendo livro...");
+    const token = localStorage.getItem("session");
 
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/book/${id}`, {
         method: "DELETE",
-        credentials: "include",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       });
 
       if (!res.ok) {
