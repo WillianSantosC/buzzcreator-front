@@ -51,6 +51,31 @@ Este front-end consome a API disponível no repositório: **[buzzcreator-back](h
 - **Jest** + **React Testing Library**: adotados para testes de componentes, garantindo a estabilidade da aplicação.
 - **Deploy**: Realizado via **Vercel**, aproveitando a integração direta com repositórios GitHub e o suporte nativo a Next.js.
 
+Claro! Aqui está a seção atualizada da documentação com a explicação sobre a autenticação JWT, a observação sobre o uso do localStorage e o aviso sobre a branch com cookies para testes locais:
+
+---
+
+## Arquitetura e Decisões Técnicas
+
+- **Framework**: Optou-se por **Next.js** para aproveitar o rendering híbrido (SSG e SSR) e otimização automática de performance.
+- **Tipagem**: Uso de **TypeScript** em toda a base de código para aumentar a segurança e facilitar a manutenção.
+- **Estilo**: Adotado **PandaCSS** para estilização rápida, responsiva e consistente, eliminando a necessidade de arquivos CSS complexos.
+- **Gerenciamento de Estado**: Utilização de **Zustand** como solução leve e eficiente para armazenar o estado global do carrinho, evitando a complexidade do Redux.
+- **Organização**: Separação clara entre componentes (`components`), páginas (`templates`), configuração de estilos (`styles`), documentação (`storybook`) e lojas de estado (`store`).
+- **React Hot Toast**: para fornecer notificações rápidas e amigáveis ao usuário.
+- **Husky** + **Lint-staged**: utilizados para validação de código no pre-commit, garantindo qualidade e padronização.
+- **Jest** + **React Testing Library**: adotados para testes de componentes, garantindo a estabilidade da aplicação.
+- **Deploy**: Realizado via **Vercel**, aproveitando a integração direta com repositórios GitHub e o suporte nativo a Next.js.
+- **Autenticação**: A autenticação é realizada utilizando **JSON Web Tokens (JWT)**, onde o backend gera um token assinado com informações do usuário após login bem-sucedido. A validação do token ocorre tanto no frontend (para controle de UI e redirecionamentos) quanto no backend (para validação das APIs protegidas).
+
+  > Por questões de **compatibilidade e restrições de cookies em ambientes de deploy separados (front e back hospedados em domínios diferentes)**, optou-se por armazenar o token JWT no **localStorage** do navegador. Essa abordagem facilita o acesso ao token no frontend sem os problemas comuns de CORS e SameSite dos cookies cross-site, simplificando o fluxo de autenticação.
+
+  > **Importante:** Apesar disso, para ambientes locais e testes, existe uma versão alternativa que utiliza **cookies HTTP-only**, mais segura para produção. Essa versão está nas branches `with-cookies` tanto no backend quanto no frontend. As branches `main` permanecem configuradas para a autenticação via localStorage.
+
+---
+
+Se precisar, posso ajudar a documentar também o fluxo de autenticação ou fornecer exemplos de uso dessas branches!
+
 ---
 
 ## Scripts úteis
