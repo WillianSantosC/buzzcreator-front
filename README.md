@@ -1,116 +1,96 @@
 # BuzzCreator Front
 
-**BuzzCreator Front** é uma aplicação web desenvolvida com Next.js e TypeScript, projetada para gerenciar um catálogo de livros e facilitar a realização de pedidos em uma interface pública de e-commerce. O painel administrativo oferece funcionalidades de gestão de produtos, como cadastro, edição e exclusão de livros.
+**BuzzCreator Front** is a web application developed with Next.js and TypeScript, designed to manage a book catalog and facilitate orders through a public e-commerce interface. The admin panel provides product management functionalities such as adding, editing, and deleting books.
 
 ---
 
 ## Backend
 
-Este front-end consome a API disponível no repositório: **[buzzcreator-back](https://github.com/WillianSantosC/buzzcreator-back)**
+This frontend consumes the API available in the repository: **[buzzcreator-back](https://github.com/WillianSantosC/buzzcreator-back)**
 
 ---
 
-## Funcionalidades
+## Features
 
-- **Exibição pública** de catálogo de livros
-- **Filtro** de livros por autor e título
-- **Carrinho de compras** com gerenciamento de estado via Zustand
-- **Fluxo de pedido** simplificado
-- **Painel administrativo** para CRUD de livros
-- Feedbacks de ação com **React Hot Toast**
-- Layout responsivo com **PandaCSS**
-- Consumo de API RESTful via **fetch**
+- **Public display** of the book catalog
+- **Book filtering** by author and title
+- **Shopping cart** with state management via Zustand
+- Simplified **order flow**
+- **Admin panel** for book CRUD
+- Action feedbacks with **React Hot Toast**
+- Responsive layout with **PandaCSS**
+- Consumes RESTful API via **fetch**
 
 ---
 
-## Tecnologias Utilizadas
+## Technologies Used
 
-- **Next.js** + **TypeScript** (framework e tipagem)
-- **PandaCSS** (estilização)
-- **Zustand** (gestão de estado do carrinho)
-- **React Hook Form** (formulários, se aplicável)
-- **Fetch** (consumo da API)
-- **Vercel** (deploy)
-- **ESLint** + **Prettier** (padronização de código)
-- **Storybook** (documentação)
-- **Jest** + **React Testing Library** (testes)
-- **Husky** + **Lint-staged** (validação pre-commit)
+- **Next.js** + **TypeScript** (framework and typing)
+- **PandaCSS** (styling)
+- **Zustand** (cart state management)
+- **React Hook Form** (forms, if applicable)
+- **Fetch** (API consumption)
+- **Vercel** (deployment)
+- **ESLint** + **Prettier** (code standardization)
+- **Storybook** (documentation)
+- **Jest** + **React Testing Library** (testing)
+- **Husky** + **Lint-staged** (pre-commit validation)
 - **Github Actions** (CI/CD)
 
 ---
 
-## Arquitetura e Decisões Técnicas
+## Architecture and Technical Decisions
 
-- **Framework**: Optou-se por **Next.js** para aproveitar o rendering híbrido (SSG e SSR) e otimização automática de performance.
-- **Tipagem**: Uso de **TypeScript** em toda a base de código para aumentar a segurança e facilitar a manutenção.
-- **Estilo**: Adotado **PandaCSS** para estilização rápida, responsiva e consistente, eliminando a necessidade de arquivos CSS complexos.
-- **Gerenciamento de Estado**: Utilização de **Zustand** como solução leve e eficiente para armazenar o estado global do carrinho, evitando a complexidade do Redux.
-- **Organização**: Separação clara entre componentes (`components`), páginas (`templates`), configuração de estilos (`styles`), documentação (`storybook`) e lojas de estado (`store`).
-- **React Hot Toast**: para fornecer notificações rápidas e amigáveis ao usuário.
-- **Husky** + **Lint-staged**: utilizados para validação de código no pre-commit, garantindo qualidade e padronização.
-- **Jest** + **React Testing Library**: adotados para testes de componentes, garantindo a estabilidade da aplicação.
-- **Deploy**: Realizado via **Vercel**, aproveitando a integração direta com repositórios GitHub e o suporte nativo a Next.js.
+- **Framework**: Chose **Next.js** to leverage hybrid rendering (SSG and SSR) and automatic performance optimization.
+- **Typing**: **TypeScript** is used throughout the codebase to increase safety and facilitate maintenance.
+- **Styling**: **PandaCSS** was adopted for fast, responsive, and consistent styling, eliminating the need for complex CSS files.
+- **State Management**: **Zustand** is used as a lightweight and efficient solution for global cart state, avoiding Redux complexity.
+- **Organization**: Clear separation between components (`components`), pages (`templates`), style configuration (`styles`), documentation (`storybook`), and state stores (`store`).
+- **React Hot Toast**: provides fast and user-friendly notifications.
+- **Husky** + **Lint-staged**: used for pre-commit code validation, ensuring quality and consistency.
+- **Jest** + **React Testing Library**: adopted for component testing, ensuring application stability.
+- **Deployment**: Carried out via **Vercel**, taking advantage of direct integration with GitHub repositories and native support for Next.js.
+- **Authentication**: Authentication is implemented using **JSON Web Tokens (JWT)**, where the backend generates a signed token with user information upon successful login. Token validation occurs both on the frontend (for UI control and redirects) and backend (for protected API validation).
 
-Claro! Aqui está a seção atualizada da documentação com a explicação sobre a autenticação JWT, a observação sobre o uso do localStorage e o aviso sobre a branch com cookies para testes locais:
+  > Due to **compatibility issues and cookie restrictions when deploying frontend and backend on different domains**, the JWT token is stored in the browser's **localStorage**. This approach simplifies token access in the frontend without the common CORS and SameSite issues of cross-site cookies, simplifying the authentication flow.
 
----
-
-## Arquitetura e Decisões Técnicas
-
-- **Framework**: Optou-se por **Next.js** para aproveitar o rendering híbrido (SSG e SSR) e otimização automática de performance.
-- **Tipagem**: Uso de **TypeScript** em toda a base de código para aumentar a segurança e facilitar a manutenção.
-- **Estilo**: Adotado **PandaCSS** para estilização rápida, responsiva e consistente, eliminando a necessidade de arquivos CSS complexos.
-- **Gerenciamento de Estado**: Utilização de **Zustand** como solução leve e eficiente para armazenar o estado global do carrinho, evitando a complexidade do Redux.
-- **Organização**: Separação clara entre componentes (`components`), páginas (`templates`), configuração de estilos (`styles`), documentação (`storybook`) e lojas de estado (`store`).
-- **React Hot Toast**: para fornecer notificações rápidas e amigáveis ao usuário.
-- **Husky** + **Lint-staged**: utilizados para validação de código no pre-commit, garantindo qualidade e padronização.
-- **Jest** + **React Testing Library**: adotados para testes de componentes, garantindo a estabilidade da aplicação.
-- **Deploy**: Realizado via **Vercel**, aproveitando a integração direta com repositórios GitHub e o suporte nativo a Next.js.
-- **Autenticação**: A autenticação é realizada utilizando **JSON Web Tokens (JWT)**, onde o backend gera um token assinado com informações do usuário após login bem-sucedido. A validação do token ocorre tanto no frontend (para controle de UI e redirecionamentos) quanto no backend (para validação das APIs protegidas).
-
-  > Por questões de **compatibilidade e restrições de cookies em ambientes de deploy separados (front e back hospedados em domínios diferentes)**, optou-se por armazenar o token JWT no **localStorage** do navegador. Essa abordagem facilita o acesso ao token no frontend sem os problemas comuns de CORS e SameSite dos cookies cross-site, simplificando o fluxo de autenticação.
-
-  > **Importante:** Apesar disso, para ambientes locais e testes, existe uma versão alternativa que utiliza **cookies HTTP-only**, mais segura para produção. Essa versão está nas branches `with-cookies` tanto no backend quanto no frontend. As branches `main` permanecem configuradas para a autenticação via localStorage.
+  > **Important:** However, for local environments and testing, there is an alternative version that uses **HTTP-only cookies**, which is more secure for production. This version is available in the `with-cookies` branches in both the backend and frontend. The `main` branches remain configured for authentication via localStorage.
 
 ---
 
-Se precisar, posso ajudar a documentar também o fluxo de autenticação ou fornecer exemplos de uso dessas branches!
-
----
-
-## Scripts úteis
+## Useful Scripts
 
 ```bash
-# Ambiente de desenvolvimento
+# Development environment
 pnpm dev
 
-# Build de produção
+# Production build
 pnpm build
 
-# Rodar a aplicação compilada
+# Run the compiled application
 pnpm start
 
-# Lint para checagem de estilo e erros
+# Lint to check style and errors
 pnpm lint
 
-# Executar todos os testes
+# Run all tests
 pnpm test
 
-# Rodar o Storybook para ter acesso a documentação
+# Run Storybook to access documentation
 pnpm storybook
 ```
 
 ---
 
-## Como Rodar o Projeto Localmente
+## How to Run the Project Locally
 
-### Pré-requisitos
+### Prerequisites
 
 - Node.js 22+
-- PNPM (recomendado)
-- Aplicação do Back-end rodando
+- PNPM (recommended)
+- Backend application running
 
-### 1. Clonar o repositório
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/WillianSantosC/buzzcreator-front.git
@@ -118,46 +98,46 @@ git clone https://github.com/WillianSantosC/buzzcreator-front.git
 cd buzzcreator-front
 ```
 
-### 2. Instalar dependências
+### 2. Install dependencies
 
 ```bash
 pnpm install
 ```
 
-### 3. Configurar variáveis de ambiente
+### 3. Configure environment variables
 
-Crie um arquivo `.env.local` na raiz do projeto com o seguinte conteúdo:
+Create a `.env.local` file at the project root with the following content:
 
 ```env
 NEXT_PUBLIC_API_URL=https://buzzcreator-back.onrender.com
-JWT_SECRET=chave_secreta
+JWT_SECRET=your_secret_key
 ```
 
-> Ajuste a variável `NEXT_PUBLIC_API_URL` conforme o ambiente: localhost ou deploy.
+> Adjust the `NEXT_PUBLIC_API_URL` variable according to the environment: localhost or production.
 
 ---
 
-## Como Usar
+## How to Use
 
-1. Inicie o servidor de desenvolvimento:
+1. Start the development server:
 
 ```bash
 pnpm dev
 ```
 
-2. Acesse no navegador:
+2. Access in your browser:
 
 ```
 http://localhost:3000
 ```
 
-> A aplicação será recarregada automaticamente a cada alteração nos arquivos.
+> The application will automatically reload whenever you make changes to the files.
 
 ---
 
-## Documentação da API
+## API Documentation
 
-A documentação é gerada automaticamente com Storybook e pode ser acessada em:
+The documentation is automatically generated with Storybook and can be accessed at:
 
 ```
 http://localhost:6006
@@ -165,9 +145,9 @@ http://localhost:6006
 
 ---
 
-## Deploy
+## Deployment
 
-O deploy deste projeto foi feito na plataforma **Vercel**.
+This project was deployed on the **Vercel** platform.
 
-🔗 Acesse a aplicação em produção:
+🔗 Access the application in production:
 **[https://buzzcreator-front.vercel.app](#)**
